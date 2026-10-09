@@ -28,6 +28,101 @@
 
     <!-- JavaScript -->
     <script src="./script.js" defer></script>
+
+    <!-- Responsive mobile navigation -->
+    <style>
+        .mobile-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: 1px solid rgba(232, 204, 139, 0.28);
+            border-radius: 12px;
+            color: #f3dfad;
+            background: rgba(255, 255, 255, 0.06);
+            font: inherit;
+            font-size: 1.35rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 640px) {
+            .glass-navbar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .mobile-menu-toggle {
+                display: inline-flex;
+                order: 3;
+            }
+
+            .glass-navbar .desktop-nav {
+                display: none;
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 12px;
+                right: 12px;
+                z-index: 1001;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding: 12px;
+                border: 1px solid rgba(232, 204, 139, 0.24);
+                border-radius: 16px;
+                background: rgba(10, 12, 29, 0.97);
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+            }
+
+            .glass-navbar .desktop-nav.is-open {
+                display: flex;
+            }
+
+            .glass-navbar .desktop-nav .nav-link {
+                display: block;
+                padding: 12px 14px;
+                border-radius: 10px;
+                font-size: 0.92rem;
+                text-align: left;
+            }
+
+            .glass-navbar .desktop-nav .nav-link:hover,
+            .glass-navbar .desktop-nav .nav-link:focus-visible {
+                background: rgba(232, 204, 139, 0.1);
+            }
+
+            .glass-navbar .music-button {
+                order: 2;
+                padding: 9px 10px;
+            }
+
+            .glass-navbar .brand {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .glass-navbar {
+                gap: 7px;
+                padding-inline: 10px;
+            }
+
+            .glass-navbar .music-label {
+                display: none;
+            }
+
+            .glass-navbar .music-button {
+                min-width: 40px;
+                justify-content: center;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -82,6 +177,7 @@
 
             <nav
                 class="nav-links desktop-nav"
+                id="main-navigation"
                 aria-label="Main navigation"
             >
                 <a href="#hero" class="nav-link active">
@@ -100,6 +196,18 @@
                 </a>
             </nav>
 
+
+            <!-- Mobile navigation toggle -->
+            <button
+                class="mobile-menu-toggle glass-button"
+                id="mobile-menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span class="menu-toggle-icon" aria-hidden="true">☰</span>
+            </button>
 
             <!-- Music Control -->
             <button
@@ -596,6 +704,38 @@
         role="status"
         aria-live="polite"
     ></div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("mobile-menu-toggle");
+            const navigation = document.getElementById("main-navigation");
+            if (!toggle || !navigation) return;
+
+            const icon = toggle.querySelector(".menu-toggle-icon");
+            const closeMenu = () => {
+                navigation.classList.remove("is-open");
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.setAttribute("aria-label", "Open navigation menu");
+                icon.textContent = "☰";
+            };
+
+            toggle.addEventListener("click", () => {
+                const isOpen = navigation.classList.toggle("is-open");
+                toggle.setAttribute("aria-expanded", String(isOpen));
+                toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+                icon.textContent = isOpen ? "✕" : "☰";
+            });
+
+            navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+            document.addEventListener("click", event => {
+                if (!navigation.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+            });
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 640) closeMenu();
+            });
+        });
+    </script>
 
 </body>
 </html>
