@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b19">
+<meta name="description" content="Explore the story of Mahishasuramardini through a cinematic opening, an eight-step roadmap, a gallery, and a local video experience.">
+<title>The Divine Story | Mahalaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#090b19;--panel:#12162b;--gold:#e8cf91;--cream:#fff8e9;--muted:#c6c0b6;--line:#655638;--teal:#83cfc4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;z-index:20;top:16px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 18px;border:1px solid #ffffff22;border-radius:18px;background:#090b19c9;backdrop-filter:blur(16px)}
+.brand{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:700;letter-spacing:.08em;color:var(--gold)}
+.navlinks{display:flex;gap:22px;align-items:center;font-size:.83rem;color:#eee6d6}
+.navlinks a:hover{color:var(--gold)}
+.hero{min-height:100svh;position:relative;display:grid;align-items:end;overflow:hidden;padding:150px max(7vw,24px) 76px;background:linear-gradient(90deg,#090b19f2 0%,#090b19a8 46%,#090b1930 100%),linear-gradient(0deg,#090b19 0%,transparent 45%),url('./assets/images/durga-hero.jpg') center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 35%,#e8cf9118,transparent 34%);pointer-events:none}
+.hero-content{position:relative;max-width:760px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:700}
+.eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:1.02;margin:0}
+h1{font-size:clamp(3.8rem,9vw,8rem);font-weight:500;letter-spacing:-.04em;margin:20px 0}
+h1 span{display:block;color:var(--gold)}
+.hero p{max-width:590px;color:#e0d9cc;font-size:1.02rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;border:1px solid #e8cf9170;font-size:.88rem;font-weight:600;transition:.25s}
+.button.primary{background:var(--gold);color:#15101a}
+.button:hover{transform:translateY(-2px);box-shadow:0 10px 30px #0005}
+.hero-note{position:absolute;right:7vw;bottom:54px;max-width:200px;color:#e6decd;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-align:right}
+.section{padding:100px max(6vw,22px)}
+.section-heading{max-width:720px;margin:0 auto 54px;text-align:center}
+.section-heading .eyebrow{justify-content:center}
+.section-heading h2{font-size:clamp(2.8rem,6vw,5rem);margin:17px 0;color:var(--cream)}
+.section-heading p{color:var(--muted);margin:0 auto;max-width:620px}
+.roadmap-section{background:radial-gradient(ellipse at 50% 0%,#292039 0%,var(--night) 58%);overflow:hidden}
+.roadmap{position:relative;max-width:1040px;margin:0 auto;padding:12px 0}
+.roadmap:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:clamp(34px,5vw,58px);transform:translateX(-50%);border:1px solid #c9b17455;border-radius:30px;background:linear-gradient(90deg,#191b2a,#282238 50%,#171a28);box-shadow:inset 0 0 0 5px #ffffff05}
+.roadmap:after{content:"";position:absolute;top:18px;bottom:18px;left:50%;transform:translateX(-50%);width:2px;background:repeating-linear-gradient(to bottom,var(--gold) 0 9px,transparent 9px 18px);opacity:.65}
+.stop{position:relative;display:grid;grid-template-columns:1fr 82px 1fr;align-items:center;min-height:245px;margin:0 0 26px}
+.stop:last-child{margin-bottom:0}
+.stop .number{grid-column:2;grid-row:1;z-index:2;justify-self:center;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--cream);color:#181526;border:4px solid var(--gold);font-weight:800;box-shadow:0 0 0 7px #090b19}
+.stop .card{width:min(100%,390px);border:1px solid #e8cf9130;border-radius:18px;overflow:hidden;background:#111426d9;box-shadow:0 20px 55px #0003}
+.stop:nth-child(odd) .card{grid-column:1;grid-row:1;justify-self:end}
+.stop:nth-child(even) .card{grid-column:3;grid-row:1;justify-self:start}
+.card img{width:100%;height:180px;object-fit:cover;display:block;background:#252238}
+.card-body{padding:18px 20px 20px}
+.card .date{font-size:.69rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.card h3{font-size:1.75rem;margin:7px 0 8px}
+.card p{color:var(--muted);font-size:.9rem;margin:0}
+.roadmap-caption{text-align:center;margin:42px auto 0;color:#bdb4a1;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.gallery-section{background:#0d1020}
+.gallery{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{margin:0;position:relative;border-radius:16px;overflow:hidden;min-height:230px;border:1px solid #ffffff18}
+.gallery img{width:100%;height:100%;min-height:230px;position:absolute;inset:0;object-fit:cover;transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{position:absolute;inset:auto 0 0;padding:42px 18px 16px;background:linear-gradient(transparent,#090b19e8);font-family:"Cormorant Garamond",serif;font-size:1.55rem}
+
+/* DIVINE VIDEO EXPERIENCE — matches the existing Mahalaya visual style */
+.divine-video-section{
+  position:relative; isolation:isolate; overflow:hidden;
+  padding:100px max(6vw,22px);
+  background:radial-gradient(ellipse at 50% 42%,rgba(232,207,145,.13),transparent 52%),
+             radial-gradient(ellipse at 12% 80%,rgba(131,207,196,.07),transparent 38%),
+             linear-gradient(180deg,#0d1020 0%,#090b19 100%);
+}
+.divine-video-section::before{
+  content:""; position:absolute; z-index:-1; width:min(70vw,760px); aspect-ratio:1;
+  top:50%; left:50%; transform:translate(-50%,-50%); border-radius:50%;
+  background:rgba(232,207,145,.07); filter:blur(90px); pointer-events:none;
+}
+.video-heading{max-width:760px;margin:0 auto 42px;text-align:center}
+.video-kicker{
+  display:inline-flex;align-items:center;gap:10px;color:var(--gold);
+  font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+}
+.video-kicker::before,.video-kicker::after{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.video-kicker::after{transform:rotate(180deg)}
+.video-heading h2{margin:18px 0 15px;color:var(--cream);font-size:clamp(2.8rem,6vw,5rem);font-weight:500;line-height:1.02}
+.video-heading h2 span{color:var(--gold)}
+.video-heading p{max-width:620px;margin:0 auto;color:var(--muted);line-height:1.85}
+.video-frame{
+  position:relative;width:min(100%,1000px);margin:0 auto;padding:9px;overflow:hidden;
+  border:1px solid rgba(232,207,145,.38);border-radius:25px;
+  background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.025));
+  box-shadow:0 28px 85px rgba(0,0,0,.48),0 0 50px rgba(232,207,145,.08),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.video-frame::before{content:"";position:absolute;z-index:2;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.06);pointer-events:none}
+.video-frame video{display:block;width:100%;max-height:75vh;aspect-ratio:16/9;object-fit:contain;background:#03040a;border-radius:17px}
+.video-caption{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  width:min(100%,1000px);margin:18px auto 0;color:#bdb4a1;font-size:.76rem;letter-spacing:.08em;
+}
+.video-caption strong{color:var(--gold);font-weight:600}
+.video-caption span:last-child{text-align:right}
+@media(max-width:700px){
+  .divine-video-section{padding:76px 18px}
+  .video-heading{margin-bottom:30px}
+  .video-frame{padding:5px;border-radius:17px}
+  .video-frame video{border-radius:12px;aspect-ratio:16/9}
+  .video-caption{align-items:flex-start;flex-direction:column;gap:5px;font-size:.69rem}
+  .video-caption span:last-child{text-align:left}
+}
+
+.closing{text-align:center;padding:95px 24px 110px;background:radial-gradient(ellipse at 50% 100%,#3a2a29 0%,var(--night) 65%)}
+.closing h2{font-size:clamp(2.8rem,6vw,5rem);margin:18px 0}
+.closing p{max-width:580px;margin:0 auto;color:var(--muted)}
+footer{border-top:1px solid #ffffff14;padding:24px;text-align:center;color:#9d9aaa;font-size:.8rem}
+@media(max-width:700px){
+ .nav{top:10px;padding:10px 13px}.brand{font-size:1.2rem}.navlinks{gap:12px;font-size:.72rem}
+ .hero{min-height:90svh;padding:135px 24px 70px;background-position:58% center}
+ .hero-note{display:none}.section{padding:76px 18px}.section-heading{margin-bottom:38px}
+ .roadmap:before{left:22px;transform:none;width:28px}.roadmap:after{left:36px}
+ .stop{grid-template-columns:54px minmax(0,1fr);min-height:auto;margin-bottom:25px;gap:0}
+ .stop .number{grid-column:1;grid-row:1;justify-self:start;width:40px;height:40px}
+ .stop:nth-child(odd) .card,.stop:nth-child(even) .card{grid-column:2;grid-row:1;justify-self:stretch;width:100%}
+ .card img{height:170px}.gallery{grid-template-columns:1fr 1fr}.gallery figure,.gallery img{min-height:190px}
+}
+@media(max-width:430px){.navlinks{gap:9px}.navlinks a{font-size:.68rem}.gallery{grid-template-columns:1fr}.gallery figure,.gallery img{min-height:220px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+<!-- All story artwork is loaded from local ./assets/images/ files. -->
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a class="brand" href="./index.html">MAHALAYA</a>
+  <div class="navlinks"><a href="#opening">Opening</a><a href="#roadmap">Story Roadmap</a><a href="#moments">Divine Moments</a><a href="#divine-video">Watch Video</a><a href="./index.html">Home</a></div>
+</nav>
+
+<!-- SECTION 1: One cinematic image introduces a specific event. Place your chosen local Durga artwork at ./assets/images/durga-hero.jpg. -->
+<header class="hero" id="opening">
+  <div class="hero-content">
+    <div class="eyebrow">The divine story · Chapter I</div>
+    <h1>When the Gods<br>Called <span>the Mother</span></h1>
+    <p>Mahishasura's growing power cast a shadow over the three worlds. When the gods could no longer defeat him alone, their divine energies united—and from that radiance, Goddess Durga emerged.</p>
+    <div class="actions"><a class="button primary" href="#roadmap">Follow the Story ↓</a><a class="button" href="#moments">Explore the Moments</a></div>
+  </div>
+  <div class="hero-note">One story · Eight turning points<br>From darkness to victory</div>
+</header>
+
+<!-- SECTION 2: A roadmap-style timeline, inspired by the supplied winding-road reference. -->
+<main>
+<section class="section roadmap-section" id="roadmap">
+  <div class="section-heading">
+    <div class="eyebrow">The journey unfolds</div>
+    <h2>The Road to Victory</h2>
+    <p>Travel through the key turning points of the Mahishasuramardini legend and the sacred observance of Mahalaya. Each numbered stop reveals another part of the journey.</p>
+  </div>
+  <div class="roadmap">
+    <article class="stop"><span class="number">1</span><div class="card"><img loading="lazy" src="./assets/images/mahishasura-rise.jpg" alt="Dramatic dark sky representing the rise of a great threat"><div class="card-body"><span class="date">The beginning</span><h3>The Rise of Mahishasura</h3><p>Empowered by a boon, the buffalo demon challenges the gods and threatens the balance of the worlds.</p></div></div></article>
+    <article class="stop"><span class="number">2</span><div class="card"><img loading="lazy" src="./assets/images/durga-birth.jpg" alt="Radiant golden light symbolising divine energy"><div class="card-body"><span class="date">The divine response</span><h3>Durga Is Born</h3><p>The combined radiance of the gods takes form as Goddess Durga, carrying their strength and blessings.</p></div></div></article>
+    <article class="stop"><span class="number">3</span><div class="card"><img loading="lazy" src="./assets/images/divine-weapons.jpg" alt="Mountain landscape symbolising the goddess's sacred arrival"><div class="card-body"><span class="date">The preparation</span><h3>The Gifts of the Gods</h3><p>The gods offer divine weapons and gifts. Durga prepares to face the force that none of them could overcome alone.</p></div></div></article>
+    <article class="stop"><span class="number">4</span><div class="card"><img loading="lazy" src="./assets/images/durga-battle.jpg" alt="A dramatic mountain peak beneath a stormy sky"><div class="card-body"><span class="date">The challenge</span><h3>The Battle Begins</h3><p>Riding her lion, the goddess meets Mahishasura's armies. The struggle becomes a test of courage, power and resolve.</p></div></div></article>
+    <article class="stop"><span class="number">5</span><div class="card"><img loading="lazy" src="./assets/images/mahishasura-transformation.jpg" alt="Powerful ocean waves symbolising the intensity of battle"><div class="card-body"><span class="date">The turning point</span><h3>The Many Forms of Evil</h3><p>Mahishasura changes forms to escape defeat, but Durga meets every transformation with unwavering strength.</p></div></div></article>
+    <article class="stop"><span class="number">6</span><div class="card"><img loading="lazy" src="./assets/images/mahishasuramardini-victory.jpg" alt="Sunlight breaking through clouds after a storm"><div class="card-body"><span class="date">The climax</span><h3>Mahishasuramardini</h3><p>At the decisive moment, Durga defeats Mahishasura and restores balance to the worlds.</p></div></div></article>
+    <article class="stop"><span class="number">7</span><div class="card"><img loading="lazy" src="./assets/images/triumph-of-good.jpg" alt="Golden sunrise representing hope and renewal"><div class="card-body"><span class="date">The legacy</span><h3>Good Triumphs</h3><p>The victory becomes a timeless reminder that courage, dharma and divine strength can overcome darkness.</p></div></div></article>
+    <article class="stop"><span class="number">8</span><div class="card"><img loading="lazy" src="./assets/images/ritual-of-mahalaya.jpg" alt="Ritual of Mahalaya"><div class="card-body"><span class="date">The sacred observance</span><h3>Ritual of Mahalaya</h3><p>Through prayers, remembrance and the invocation of the Divine Mother, Mahalaya marks the spiritual beginning of Devi Paksha.</p></div></div></article>
+  </div>
+  <p class="roadmap-caption">Follow each marker · Discover each chapter</p>
+</section>
+
+<section class="section gallery-section" id="moments">
+  <div class="section-heading"><div class="eyebrow">Visual interlude</div><h2>Moments of the Legend</h2><p>Use this gallery for your chosen Durga illustrations, artwork or stills. Add your own local Durga artwork files using the filenames referenced in this page.</p></div>
+  <div class="gallery">
+    <figure><img loading="lazy" src="./assets/images/mahishasura-rise.jpg" alt="Placeholder image for the dark age"><figcaption>The Age of Darkness</figcaption></figure>
+    <figure><img loading="lazy" src="./assets/images/durga-birth.jpg" alt="Placeholder image for divine radiance"><figcaption>Divine Radiance</figcaption></figure>
+    <figure><img loading="lazy" src="./assets/images/divine-weapons.jpg" alt="Placeholder image for sacred arrival"><figcaption>The Mother's Arrival</figcaption></figure>
+  </div>
+</section>
+
+<!-- DIVINE VIDEO EXPERIENCE -->
+<section class="divine-video-section" id="divine-video">
+  <div class="video-heading">
+    <div class="video-kicker">A cinematic offering</div>
+    <h2>Witness the <span>Divine Battle</span></h2>
+    <p>
+      Relive the legendary triumph of Goddess Durga over Mahishasura.
+      Let this visual journey celebrate courage, divine strength, and the victory of good over evil.
+    </p>
+  </div>
+
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline aria-label="Mahishasuramardini divine story video">
+      <source src="./assets/mahishasuramardini.mp4" type="video/mp4">
+      Your browser does not support HTML video playback.
+    </video>
+  </div>
+
+  <div class="video-caption">
+    <span><strong>MAHISHASURAMARDINI</strong> · THE DIVINE VICTORY</span>
+    <span>Use the player controls to watch in full screen</span>
+  </div>
+</section>
+
+<section class="closing"><div class="eyebrow">Mahalaya · The awakening</div><h2>May Courage Rise<br>Within Us All</h2><p>The story of Mahishasuramardini is more than a battle—it is a celebration of hope, strength and the victory of good over evil.</p><div class="actions" style="justify-content:center"><a class="button primary" href="./index.html">Return to Mahalaya</a><a class="button" href="#opening">Back to the Beginning ↑</a></div></section>
+</main>
+<footer>Created for the Mahalaya experience · Use local images in ./assets/images/ that you have permission to use.</footer>
+<script>
+(() => {
+  const links = document.querySelectorAll('.navlinks a[href^="#"]');
+  links.forEach(link => link.addEventListener('click', event => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      history.replaceState(null, '', link.getAttribute('href'));
+    }
+  }));
+})();
+</script>
+</body>
+</html>

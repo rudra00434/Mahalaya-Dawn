@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Mahalaya — The Dawn of Devi Paksha. Experience the divine arrival of Maa Durga through an immersive cinematic journey."
+    >
+
+    <meta name="theme-color" content="#090b19">
+    <meta name="color-scheme" content="dark">
+
+    <title>Mahalaya — The Dawn of Devi Paksha</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- JavaScript -->
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Background Audio -->
+    <audio
+        id="background-audio"
+        src="./assets/mahalaya-music.mp3"
+        loop
+        preload="none"
+    ></audio>
+
+
+    <!-- Atmospheric Background -->
+    <div class="ambient-background" aria-hidden="true">
+        <div class="ambient-orb orb-one"></div>
+        <div class="ambient-orb orb-two"></div>
+        <div class="ambient-orb orb-three"></div>
+
+        <div class="background-grain"></div>
+    </div>
+
+
+    <!-- Floating Flowers -->
+    <div
+        class="flower-container"
+        id="flower-container"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- Main Experience -->
+    <main class="experience">
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <header class="glass-navbar">
+
+            <a
+                href="#hero"
+                class="brand"
+                aria-label="Mahalaya home"
+            >
+                <span class="brand-symbol" aria-hidden="true">✦</span>
+
+                <span class="brand-name">
+                    MAHALAYA
+                    <small>THE DIVINE DAWN</small>
+                </span>
+            </a>
+
+
+            <nav
+                class="nav-links desktop-nav"
+                aria-label="Main navigation"
+            >
+                <a href="#hero" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="#revelation" class="nav-link">
+                    The Awakening
+                </a>
+
+                <a href="#blessings" class="nav-link">
+                    Blessings
+                </a>
+                <a href="./story.html" class="nav-link">
+                    The Divine Story
+                </a>
+            </nav>
+
+
+            <!-- Music Control -->
+            <button
+                class="music-button glass-button"
+                id="music-button"
+                type="button"
+                aria-pressed="false"
+                aria-label="Enable background music"
+            >
+                <span class="music-icon" aria-hidden="true">♫</span>
+
+                <span class="music-label">Enable Music</span>
+            </button>
+
+        </header>
+
+
+        <!-- ================= HERO SECTION ================= -->
+
+        <section class="hero" id="hero">
+
+            <div class="hero-content">
+
+                <!-- Introductory Badge -->
+                <div class="hero-badge glass-panel">
+
+                    <span
+                        class="status-dot"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>THE ARRIVAL OF THE DIVINE</span>
+
+                </div>
+
+
+                <!-- Introductory Text -->
+                <p class="eyebrow">
+                    A SACRED MORNING · A NEW BEGINNING
+                </p>
+
+
+                <!-- Main Heading -->
+                <h1 class="title">
+                    The Dawn of
+
+                    <span class="title-highlight">
+                        Mahalaya
+                    </span>
+                </h1>
+
+
+                <!-- Decorative Divider -->
+                <div
+                    class="title-divider"
+                    aria-hidden="true"
+                >
+                    <span></span>
+
+                    <span class="divider-symbol">✧</span>
+
+                    <span></span>
+                </div>
+
+
+                <!-- Bengali Greeting -->
+                <h2 class="bengali" lang="bn">
+                    শুভ মহালয়া
+                </h2>
+
+
+                <!-- Subtitle -->
+                <p class="subtitle">
+                    The Dawn of Devi Paksha
+                </p>
+
+
+                <!-- Description -->
+                <p class="description">
+                    As the first light embraces the earth, the air fills
+                    with devotion, hope, and anticipation.
+
+                    <span>
+                        Maa Durga is coming. The world awakens.
+                    </span>
+                </p>
+
+
+                <!-- Hero Buttons -->
+                <div class="hero-actions">
+
+                    <button
+                        class="begin-button primary-button"
+                        id="begin-button"
+                        type="button"
+                    >
+                        <span
+                            class="button-icon"
+                            aria-hidden="true"
+                        >✧</span>
+
+                        <span>Awaken the Divine</span>
+
+                        <span
+                            class="button-arrow"
+                            aria-hidden="true"
+                        >↗</span>
+                    </button>
+
+
+                    <a
+                        class="secondary-button"
+                        href="#revelation"
+                    >
+                        Explore the Experience
+
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Information Card -->
+            <aside class="floating-card glass-panel">
+
+                <div
+                    class="floating-card-icon"
+                    aria-hidden="true"
+                >
+                    ☼
+                </div>
+
+                <div class="floating-card-content">
+
+                    <span class="card-overline">
+                        A MOMENT OF DIVINITY
+                    </span>
+
+                    <p>
+                        Hope rises with the morning light.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- Scroll Indicator -->
+            <a
+                class="scroll-indicator"
+                href="#revelation"
+                aria-label="Scroll to the next section"
+            >
+                <span
+                    class="scroll-line"
+                    aria-hidden="true"
+                ></span>
+
+                <span>SCROLL TO DISCOVER</span>
+            </a>
+
+        </section>
+
+
+        <!-- ================= REVELATION SECTION ================= -->
+
+        <section
+            class="revelation"
+            id="revelation"
+            aria-live="polite"
+            hidden
+        >
+
+            <div class="revelation-card glass-panel">
+
+                <div
+                    class="revelation-symbol"
+                    aria-hidden="true"
+                >
+                    ✧
+                </div>
+
+
+                <p class="eyebrow">
+                    THE WAITING IS OVER
+                </p>
+
+
+                <h2 class="revelation-title">
+                    She Is Coming
+                </h2>
+
+
+                <p class="revelation-bengali" lang="bn">
+                    মা আসছেন
+                </p>
+
+
+                <p class="revelation-message">
+                    Let the light of hope awaken every heart.
+
+                    Let the spirit of devotion illuminate every soul.
+
+                    May this divine dawn bring peace, courage, and happiness
+                    into every home.
+                </p>
+
+
+                <div
+                    class="revelation-divider"
+                    aria-hidden="true"
+                >
+                    ✦
+                </div>
+
+
+                <!-- Generate a Greeting -->
+                <button
+                    class="greeting-button primary-button"
+                    id="greeting-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">✧</span>
+
+                    <span>Reveal Your Blessing</span>
+
+                    <span aria-hidden="true">✧</span>
+                </button>
+
+
+                <!-- Generated Greeting -->
+                <p
+                    class="greeting"
+                    id="greeting"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- Restart Experience -->
+                <button
+                    class="restart-button"
+                    id="restart-button"
+                    type="button"
+                >
+                    ↺ Experience Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PREMIUM BLESSINGS SHOWCASE ================= -->
+
+        <section
+            class="blessings"
+            id="blessings"
+        >
+
+            <!-- Section Heading -->
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    A PRAYER FOR EVERY HEART
+                </p>
+
+                <h2>
+                    The Spirit of <span>Agomoni</span>
+                </h2>
+
+                <p>
+                    A celebration of faith, hope, and the timeless beauty
+                    of Bengal's most cherished festival.
+                </p>
+
+            </div>
+
+
+            <!-- Overlapping Image Cards -->
+            <div class="blessings-showcase">
+
+
+                <!-- CARD 1: HOPE -->
+                <article
+                    class="showcase-card showcase-card-left"
+                >
+
+                    <!-- Image -->
+                    <div class="showcase-image">
+
+                        <img
+                            src="./assets/hope.jpg"
+                            alt="Hope and the first light of dawn"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="image-symbol"
+                            aria-hidden="true"
+                        >
+                            ☼
+                        </div>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="showcase-content">
+
+                        <span class="showcase-label">
+                            01 · A NEW BEGINNING
+                        </span>
+
+                        <h3>Hope</h3>
+
+                        <p>
+                            May every sunrise bring new possibilities
+                            and the courage to begin again.
+                        </p>
+
+                        <a
+                            class="showcase-link"
+                            href="#revelation"
+                        >
+                            Discover more
+
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2: DEVOTION -->
+                <article
+                    class="showcase-card showcase-card-center"
+                >
+
+                    <!-- Image -->
+                    <div class="showcase-image">
+
+                        <img
+                            src="./assets/devotion.jpg"
+                            alt="A devotional scene representing faith and grace"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="image-symbol"
+                            aria-hidden="true"
+                        >
+                            ✧
+                        </div>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="showcase-content">
+
+                        <span class="showcase-label">
+                            02 · FAITH &amp; GRACE
+                        </span>
+
+                        <h3>Devotion</h3>
+
+                        <p>
+                            May faith illuminate our hearts and bring us
+                            closer to the divine.
+                        </p>
+
+                        <a
+                            class="showcase-link"
+                            href="#revelation"
+                        >
+                            Discover more
+
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3: HAPPINESS -->
+                <article
+                    class="showcase-card showcase-card-right"
+                >
+
+                    <!-- Image -->
+                    <div class="showcase-image">
+
+                        <img
+                            src="./assets/happiness.jpg"
+                            alt="A warm festive scene representing happiness and togetherness"
+                            loading="lazy"
+                        >
+
+                        <div
+                            class="image-symbol"
+                            aria-hidden="true"
+                        >
+                            ❋
+                        </div>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="showcase-content">
+
+                        <span class="showcase-label">
+                            03 · JOY &amp; PEACE
+                        </span>
+
+                        <h3>Happiness</h3>
+
+                        <p>
+                            May Maa Durga's arrival fill every home
+                            with peace, joy, and togetherness.
+                        </p>
+
+                        <a
+                            class="showcase-link"
+                            href="#revelation"
+                        >
+                            Discover more
+
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+            <div
+                class="footer-divider"
+                aria-hidden="true"
+            >
+                <span></span>
+
+                <span>✧</span>
+
+                <span></span>
+            </div>
+
+
+            <p class="footer-bengali" lang="bn">
+                শুভ মহালয়া
+            </p>
+
+
+            <p class="footer-message">
+                May the divine light always guide your way.
+            </p>
+
+
+            <p class="footer-credit">
+                Crafted with devotion · A celebration of Bengal
+            </p>
+
+
+            <a
+                href="#hero"
+                class="back-to-top"
+            >
+                BACK TO THE DAWN ↑
+            </a>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- Screen Reader Announcements -->
+    <div
+        class="sr-only"
+        id="experience-status"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</body>
+</html>
